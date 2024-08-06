@@ -2,10 +2,16 @@
     <h2>My goals</h2>
 
     @foreach($goals as $goal)
-    <ul class="my-list list-group list-group-horizontal">
-        <li class="first-col list-group-item">{{ $goal->name }}</li>
-        <li class="btn-col list-group-item"><a href="{{ url('/goals' . '/' . $goal->id) }}" class="btn btn-light">Details</a></li>
-    </ul>
+        <p>
+            <a href="{{ url('/goals' . '/' . $goal->id . '/edit') }}" class="{{ $goal->status }}">{{ $goal->name }}</a>
+            <a href="{{ url('/goals' . '/' . $goal->id . '/delete') }}" class="btn btn-light">Delete</a>
+        </p>
+
+        <ul>
+        @foreach($goal->subgoals as $subgoal)
+            <li><a href="{{ url('/goals' . '/' . $goal->id . '/subgoal/' . $subgoal->id) }}" class="{{ $subgoal->status }}">{{ $subgoal->name }}</a> ({{ substr($subgoal->next_check, 0, 10) }})</li>
+        @endforeach
+        </ul>
     @endforeach
 
     <div class="spacer"></div>

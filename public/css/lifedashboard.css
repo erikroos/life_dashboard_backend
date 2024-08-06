@@ -1,0 +1,37 @@
+a.disabled {
+    pointer-events: none;
+    color: #ccc;
+}
+
+ul.my-list li.first-col {
+    width: 16em;
+}
+
+ul.my-list li.btn-col {
+    width: 8em;
+}
+
+.spacer {
+    height: 1em;
+}
+
+.ok {
+    color: green;
+}
+
+.overdue {
+    color: red;
+}
+
+.inputWrapper {
+    margin-bottom: 5px;
+}
+
+.inputWrapper .form-control {
+    display: inline;
+    width: 30%;
+}
+
+.inputWrapper > input, .inputWrapper > button {
+    margin-right: 10px;
+}
