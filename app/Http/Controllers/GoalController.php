@@ -12,7 +12,7 @@ use App\Models\Subgoal;
 use App\Providers\RouteServiceProvider;
 use \Datetime;
 
-class GoalController extends Controller
+class GoalController extends Controller implements IGoalController
 {
     public static function getAllGoalsForCurrentUser() : Collection {
         $goals = Goal::where('user_id', Auth::id())->get();
